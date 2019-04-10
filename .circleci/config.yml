@@ -9,6 +9,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
+            pip3 install -U pytest
       - run:
           command: |
             . venv/bin/activate
