@@ -3,7 +3,7 @@ from utils import Fibo
 
 class TestFibbonacci:
     def test_fibo_zero(self):
-        assert Fibo.generatefibonacci(0) == 5
+        assert Fibo.generatefibonacci(0) == 0
 
     def test_fibo_first(self):
         assert Fibo.generatefibonacci(1) == 1
