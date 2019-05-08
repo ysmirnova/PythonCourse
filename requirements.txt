@@ -2,3 +2,4 @@ pytest
 webdriver_manager
 pytest-variables
 pytest-selenium
+selenium
