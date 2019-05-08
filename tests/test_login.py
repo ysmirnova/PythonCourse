@@ -1,6 +1,5 @@
 
 from pages.login_page import LoginPage
-from pages.dashboard_page import DashboardPage
 
 
 class TestLogin:
@@ -10,8 +9,8 @@ class TestLogin:
         # self.login_page.is_page_opened(variables["title_login"])
         # self.login_page.login(variables["username"], variables["password"])
         assert self.login_page.is_page_opened("Log in - Hillel IT School JIRA")
-        self.main_page = self.login_page.login("YuliiaSmirnova", "YuliiaSmirnova")
-        assert self.main_page.is_page_opened("System Dashboard - Hillel IT School JIRA")
+        self.dashboard_page = self.login_page.login("YuliiaSmirnova", "YuliiaSmirnova")
+        assert self.dashboard_page.is_page_opened("System Dashboard - Hillel IT School JIRA")
 
     def test_login_invalid_username(self, driver, variables):
         self.login_page = LoginPage(driver)
