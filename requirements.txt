@@ -3,3 +3,4 @@ webdriver_manager
 pytest-variables
 pytest-selenium
 selenium
+urllib3==1.21.1
