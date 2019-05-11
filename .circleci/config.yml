@@ -29,7 +29,7 @@ jobs:
           name: Test
           command: |
             . venv/bin/activate
-            pytest --variables variables.json --alluredir ~/PythonCourse/my_allure_results_json
+            pytest --alluredir ~/PythonCourse/my_allure_results_json
       - run:
         name: Reporting
           command:
