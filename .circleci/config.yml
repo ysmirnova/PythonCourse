@@ -34,7 +34,7 @@ jobs:
           name: Reporting
           command:
             allure generate -c ~/PythonCourse/my_allure_results_json -o ~/PythonCourse/my_allure_results
-      - store artifacts:
+      - store_artifacts:
           path: ~/PythonCourse/my_allure_results
           destination: ~/PythonCourse/my_allure_results
           when: always
