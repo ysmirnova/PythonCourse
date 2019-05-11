@@ -18,7 +18,7 @@ jobs:
           name: Install allure CLI
           command: |
             uname -a
-            sudo apt-get install allure-commandline
+            sudo npm install -g allure-commandline --save-dev
 #            sudo npm install -g allure-comandline --save-dev
       - save_cache: # cache Python dependencies using checksum of Pipfile as the cache-key
           key: deps9-{{ .Branch }}-{{ checksum "requirements.txt" }}
