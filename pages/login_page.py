@@ -19,3 +19,6 @@ class LoginPage(BasePage):
 
     def get_error_message(self):
         return helpers.get_text(self.driver,self.ERROR_MESSAGE, 10)
+
+    def open(self, url):
+        self.driver.get(url)
