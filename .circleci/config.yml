@@ -33,7 +33,7 @@ jobs:
             pytest --variables variables.json --alluredir ~/PythonCourse/allure_results_json
       - run:
           name: Reporting
-          command:
+          command:  |
             allure generate -c ~/PythonCourse/allure_results_json -o ~/PythonCourse/allure_results
       - store_artifacts:
           path: ~/PythonCourse/allure_results
