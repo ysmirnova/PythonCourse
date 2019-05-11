@@ -37,6 +37,6 @@ jobs:
             allure generate -c ~/PythonCourse/allure_results_json -o ~/PythonCourse/allure_results
           when: always
       - store_artifacts:
-          path: allure_results
+          path: ~/PythonCourse/allure_results
           destination: allure_results
           when: always
