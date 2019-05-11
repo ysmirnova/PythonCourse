@@ -29,12 +29,12 @@ jobs:
           name: Test
           command: |
             . venv/bin/activate
-            pytest
+            pytest --variables variables.json --alluredir ~/PythonCourse/my_allure_results_json
       - run:
-        name: Reporting
+          name: Reporting
           command:
             allure generate -c ~/PythonCourse/my_allure_results_json -o ~/PythonCourse/my_allure_results
       - store artifacts:
-        path: ~/PythonCourse/my_allure_results
-        destination: ~/PythonCourse/my_allure_results
-        when: always
+          path: ~/PythonCourse/my_allure_results
+          destination: ~/PythonCourse/my_allure_results
+          when: always
