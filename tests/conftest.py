@@ -8,6 +8,7 @@ from webdriver_manager.chrome import ChromeDriverManager as Chrome_driver_manage
 @pytest.fixture(scope="function")
 def driver():
     _driver = webdriver.Chrome(executable_path=Chrome_driver_manager().install())
+    _driver.fullscreen_window()
     yield _driver
     _driver.quit()
 

@@ -1,7 +1,14 @@
 {
+  "url" : "https://jira.hillel.it/login.jsp",
   "username": "YuliiaSmirnova",
   "password": "YuliiaSmirnova",
   "title_login": "Log in",
   "title_dashboard": "System Dashboard",
-  "login_error_message": "Sorry, your username and password are incorrect - please try again."
+  "login_error_message": "Sorry, your username and password are incorrect - please try again.",
+  "title_create_issue": "Create Issue",
+  "project": "Webinar",
+  "issue_type": "Story",
+  "summary": "Story summary",
+  "description": "Story description",
+  "priority": "High"
 }
