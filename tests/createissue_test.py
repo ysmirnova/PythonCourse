@@ -8,9 +8,10 @@ import pytest
 from pages.login_page import LoginPage
 
 
+@allure.feature("Create issue")
+@allure.tag("ui")
 class TestCreateIssue:
     driver = None
-    login_page = None
     dashboard_page = None
     delete_issue = True
 

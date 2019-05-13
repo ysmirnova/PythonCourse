@@ -4,6 +4,8 @@ import pytest
 from pages.login_page import LoginPage
 
 
+@allure.feature("Login")
+@allure.tag("ui")
 class TestLogin:
     driver = None
     login_page = None

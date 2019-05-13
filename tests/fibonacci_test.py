@@ -1,7 +1,7 @@
 from utils import Fibo
 
 
-class Testv_Fibbonacci:
+class TestFibbonacci:
     def test_fibo_zero(self):
         assert Fibo.generatefibonacci(0) == 0
 
