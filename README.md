@@ -17,4 +17,4 @@ UI selenium tests for Jira
 
 ` allure serve allure_results_json`
 
-[![CircleCI](https://circleci.com/gh/ysmirnova/PythonCourse/tree/fiboTest.svg?style=svg)](https://circleci.com/gh/ysmirnova/PythonCourse/tree/fiboTest)
+[![CircleCI](https://circleci.com/gh/ysmirnova/PythonCourse/tree/master.svg?style=svg)](https://circleci.com/gh/ysmirnova/PythonCourse/tree/master)
