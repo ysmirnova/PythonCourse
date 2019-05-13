@@ -50,5 +50,6 @@ class TestLogin:
             self.login_page.login(variables["username"], "invalid")
 
         with allure.step("Error message appears"):
-            assert "fff." in self.login_page.get_error_message()
+            assert "Sorry, your username and password are incorrect - please try again." \
+                   in self.login_page.get_error_message()
 
