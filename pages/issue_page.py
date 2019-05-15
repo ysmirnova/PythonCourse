@@ -8,13 +8,14 @@ from utils import helpers
 class IssuePage(BasePage):
     PROJECT_FIELD = (By.ID, "project-name-val")
     ISSUETYPE_FIELD = (By.ID, "type-val")
-    SUMMARY_INPUT = (By.ID, "summary-val")
+    SUMMARY_VAl = (By.ID, "summary-val")
+    SUMMARY_INPUT = (By.ID, "summary")
     DESCRIPTION_INPUT = (By.ID, "description-val")
     MORE_DROPDOWN=(By.ID,"opsbar-operations_more")
     DELETE_BUTTON =(By.ID,"delete-issue")
     CONFIRM_DELETE_BUTTON = (By.ID, "delete-issue-submit")
+    UPDATE_BUTTON = (By.CLASS_NAME, "aui-button submit")
 
-    # delete - issue
     def get_project(self):
         return helpers.get_text(self.driver,self.PROJECT_FIELD, 10)
 
@@ -22,7 +23,7 @@ class IssuePage(BasePage):
         return helpers.get_text(self.driver,self.ISSUETYPE_FIELD, 10)
 
     def get_summary(self):
-        return helpers.get_text(self.driver,self.SUMMARY_INPUT, 10)
+        return helpers.get_text(self.driver, self.SUMMARY_VAl, 10)
 
     def get_description(self):
         return helpers.get_text(self.driver,self.DESCRIPTION_INPUT, 10)
@@ -31,6 +32,12 @@ class IssuePage(BasePage):
         helpers.click(self.driver, self.MORE_DROPDOWN, 10)
         helpers.click(self.driver, self.DELETE_BUTTON, 10)
         helpers.submit(self.driver, self.CONFIRM_DELETE_BUTTON, 10)
+
+    def change_summary(self, summary_text):
+        helpers.click(self.driver, self.SUMMARY_VAl, 10)
+        helpers.input_value(self.driver, self.SUMMARY_INPUT, summary_text, 10)
+        helpers.submit(self.driver, self.SUMMARY_INPUT, 10)
+
 
 
 
