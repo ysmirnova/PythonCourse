@@ -85,9 +85,11 @@ class TestCreateIssue:
             assert self.create_issue_page.is_page_opened(variables["title_create_issue"])
         with allure.step("Fill issue data"):
             issue_data = variables["issue_data"]
+            summary = issue_data["summary"]
             issue_data["summary"] = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits)
                               for x in range(260))
             self.create_issue_page.create_issue(issue_data)
+            issue_data["summary"] = summary
         with allure.step("Error message appears"):
             assert "Summary must be less than 255 characters." in self.create_issue_page.get_error_message()
         self.delete_issue = False
