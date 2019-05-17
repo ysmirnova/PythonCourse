@@ -15,28 +15,14 @@ class TestCreateIssue:
     dashboard_page = None
     delete_issue = True
 
-    # @pytest.fixture()
-    # def setup(self, driver, variables):
-    #     self.driver = driver
-    #     self.login_page = LoginPage(driver)
-    #     self.login_page.open(variables["url"])
-    #     self.login_page.is_page_opened(variables["title_login"])
-    #     self.dashboard_page = self.login_page.login(variables["username"], variables["password"])
-    #     assert self.dashboard_page.is_page_opened(variables["title_dashboard"])
-    #     yield
-    #     if self.delete_issue:
-    #         self.issue_page.delete_issue()
-
     @pytest.fixture()
     def setup(self, driver, variables):
         self.driver = driver
         self.login_page = LoginPage(driver)
-        self.login_page.open("https://jira.hillel.it/login.jsp")
-        # variables["url"])
-        # self.login_page.is_page_opened(variables["title_login"])
-        # self.dashboard_page = self.login_page.login(variables["username"], variables["password"])
-        self.dashboard_page = self.login_page.login("YuliiaSmirnova", "YuliiaSmirnova")
-        # assert self.dashboard_page.is_page_opened(variables["title_dashboard"])
+        self.login_page.open(variables["url"])
+        self.login_page.is_page_opened(variables["title_login"])
+        self.dashboard_page = self.login_page.login(variables["username"], variables["password"])
+        assert self.dashboard_page.is_page_opened(variables["title_dashboard"])
         yield
         if self.delete_issue:
             self.issue_page.delete_issue()
@@ -60,6 +46,7 @@ class TestCreateIssue:
             assert issue_data["issue_type"] in self.issue_page.get_issue_type()
             assert issue_data["summary"] in self.issue_page.get_summary()
             assert issue_data["description"] in self.issue_page.get_description()
+            assert issue_data["priority"] in self.issue_page.get_priority()
 
     @allure.title("Create issue with only required fields")
     def test_create_issue(self, setup, variables):

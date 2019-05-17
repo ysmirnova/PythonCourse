@@ -1,3 +1,4 @@
+from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -45,4 +46,11 @@ def frame_switch(driver, locator, timeout):
 
 def frame_switch_default(driver):
     driver.switch_to.default_content()
+
+
+def select_by_text(driver, locator, value, timeout):
+    elem = driver.find_element(*locator)
+    select = Select(elem)
+    select.select_by_visible_text(value)
+
 

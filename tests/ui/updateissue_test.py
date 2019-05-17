@@ -39,12 +39,36 @@ class TestSearchIssue:
         self.issue_page.delete_issue()
 
     @allure.title("Update issue summary")
-    def test_update_issue_summary(self, setup, issue):
+    def test_update_issue_summary(self, setup, issue, variables):
         with allure.step("Update issue summary"):
             self.issue_page.change_summary("summary is updated")
         with allure.step("Check updated issue summary"):
             self.issue_page.open_dashboard()
+            assert self.dashboard_page.is_page_opened(variables["title_dashboard"])
             self.dashboard_page.search_issue(self.issue_number)
             self.issue_page = self.dashboard_page.open_found_issue()
             assert "summary is updated" in self.issue_page.get_summary()
+
+    @allure.title("Update issue priority")
+    def test_update_issue_priority(self, setup, issue, variables):
+        with allure.step("Update issue priority"):
+            self.issue_page.change_priority("Medium")
+        with allure.step("Check updated issue priority"):
+            self.issue_page.open_dashboard()
+            assert self.dashboard_page.is_page_opened(variables["title_dashboard"])
+            self.dashboard_page.search_issue(self.issue_number)
+            self.issue_page = self.dashboard_page.open_found_issue()
+            assert "Medium" in self.issue_page.get_priority()
+
+    @allure.title("Update issue assignee")
+    def test_update_issue_assignee(self, setup, issue, variables):
+        with allure.step("Update issue assignee"):
+            self.issue_page.change_assignee(variables["username"])
+        with allure.step("Check updated issue assignee"):
+            self.issue_page.open_dashboard()
+            assert self.dashboard_page.is_page_opened(variables["title_dashboard"])
+            self.dashboard_page.search_issue(self.issue_number)
+            self.issue_page = self.dashboard_page.open_found_issue()
+            assert variables["username"] in self.issue_page.get_assignee()
+
 
