@@ -1,7 +1,7 @@
 jobs:
   build:
     docker:
-      - image: circleci/python:3.7.3
+      - image: circleci/python:3.7.3-stretch-node-browsers
     steps:
       - checkout
       - run: sudo chown -R circleci:circleci /usr/local/bin
@@ -13,7 +13,13 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip3 install -U pytest
+            pip3 install -r requirements.txt
+      - run:
+          name: Install allure CLI
+          command: |
+            uname -a
+            sudo npm install -g allure-commandline --save-dev
+#            sudo npm install -g allure-comandline --save-dev
       - save_cache: # cache Python dependencies using checksum of Pipfile as the cache-key
           key: deps9-{{ .Branch }}-{{ checksum "requirements.txt" }}
           paths:
@@ -21,6 +27,16 @@ jobs:
             - "/usr/local/bin"
             - "/usr/local/lib/python3.7/site-packages"
       - run:
+          name: Test
           command: |
             . venv/bin/activate
-            pytest
+            pytest --variables variables.json --alluredir ~/PythonCourse/allure_results_json
+      - run:
+          name: Reporting
+          command:  |
+            allure generate -c ~/PythonCourse/allure_results_json -o ~/PythonCourse/allure_results
+          when: always
+      - store_artifacts:
+          path: ~/PythonCourse/allure_results
+          destination: allure_results
+          when: always
