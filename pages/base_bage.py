@@ -8,7 +8,6 @@ class BasePage:
     DASHBOARDS_MENU = (By.ID, "home_link")
     SYSTEM_DASHBOARDS = (By.ID, "dash_lnk_system_lnk")
 
-
     def __init__(self, driver):
         self.driver = driver
 
