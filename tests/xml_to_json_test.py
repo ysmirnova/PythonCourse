@@ -36,7 +36,7 @@ class TestXMLToJson:
         assert keys_list == ["Lector", "Julia", "TEST_FIRST_NAME"]
 
         json_file = json.dumps(dict_xml)
-        json_path = os.path.join(project_folder, "updated_tested_data.json")
+        json_path = os.path.join(os.getcwd(), "updated_tested_data.json")
         with open(json_path, 'w') as f:
             f.write(json_file)
 
