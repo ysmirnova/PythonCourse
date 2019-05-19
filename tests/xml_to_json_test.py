@@ -1,8 +1,10 @@
 import json
 import os
 from pathlib import Path
-from utils.change_dict import change_value_by_key_world, get_values_by_key
+
 import xmltodict
+
+from utils.change_dict import change_value_by_key_world, get_values_by_key
 
 
 class TestXMLToJson:
@@ -18,8 +20,8 @@ class TestXMLToJson:
                            "ROLE": "Automation QA",
                            "ROOM": "711",
                            "HOBBY": "Traveling"}
-        project_folder = Path(os.getcwd()).parent
-        xml_path = os.path.join(project_folder, "test_data.xml")
+        xml_path = os.path.join(os.getcwd(), "test_data.xml")
+        print(xml_path)
         assert os.path.exists(xml_path)
 
         with open(xml_path) as fd:
