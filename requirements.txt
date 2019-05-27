@@ -1,3 +1,4 @@
+requests
 pytest
 webdriver_manager
 pytest-variables
