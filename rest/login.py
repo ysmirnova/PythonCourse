@@ -19,6 +19,19 @@ class RestLogin:
     def create_issue_rest(self, url, user_name, user_pass):
         _headers = {'content-type': 'application/json'}
 
-        _response = requests.post(url, auth=HTTPBasicAuth(user_name, user_pass), headers=_headers)
+        _data = json.dumps({
+                    "fields": {
+                                "project":{
+                                        "key": "Webinar (WEBINAR)"
+                                         },
+                                "summary": "REST ye merry gentlemen.",
+                                "description": "Creating of an issue using project keys and issue type names using the REST API",
+                                "issuetype": {
+                                                "name": "Bug"
+                                            }
+                                }
+                })
+
+        _response = requests.post(url, auth=HTTPBasicAuth(user_name, user_pass), data= _data,  headers=_headers)
         return _response.status_code
 
