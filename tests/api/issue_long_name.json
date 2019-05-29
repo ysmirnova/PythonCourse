@@ -1,0 +1,15 @@
+{
+  "fields": {
+    "project": {
+      "key": "WEBINAR"
+    },
+    "summary": "REST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue sREST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue summaryummaryREST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue summaryREST issue summary",
+    "issuetype": {
+      "name": "Bug"
+    },
+    "timetracking": {
+      "originalEstimate": "1d 2h",
+      "remainingEstimate": "3h 25m"
+    }
+  }
+}
