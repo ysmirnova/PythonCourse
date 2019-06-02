@@ -1,6 +1,4 @@
-import random
-import string
-from os.path import join
+
 
 import allure
 import pytest
@@ -10,6 +8,7 @@ from pages.login_page import LoginPage
 
 @allure.feature("Update issue")
 @allure.tag("ui")
+@pytest.mark.skip
 class TestSearchIssue:
     driver = None
     dashboard_page = None

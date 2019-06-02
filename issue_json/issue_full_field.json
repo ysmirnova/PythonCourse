@@ -8,10 +8,6 @@
     "issuetype": {
       "name": "Bug"
     },
-    "assignee":{"name":"YuliiaSmirnova"},
-    "timetracking": {
-      "originalEstimate": "1d 2h",
-      "remainingEstimate": "3h 25m"
-    }
+    "assignee":{"name":"YuliiaSmirnova"}
   }
 }
