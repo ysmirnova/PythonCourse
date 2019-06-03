@@ -19,7 +19,6 @@ class RestActions:
             msg = response.json()['name']
         except json.decoder.JSONDecodeError as err:
             msg = response.text
-
         return response.status_code, msg
 
     def create_issue_rest(self, path, issue_data):
@@ -33,5 +32,18 @@ class RestActions:
         else:
             error = response.json()['errors']['summary']
         return response.status_code, key_issue, id_issue, error
+
+    def update_issue_rest(self, path, issue_data):
+        response = requests.put(self.HOST + path, auth=self.AUTH, data=issue_data, headers=self.HEADERS)
+        return response.status_code
+
+    def get_issue_rest(self, path):
+        response = requests.get(self.HOST + path, auth=self.AUTH, headers=self.HEADERS)
+        return response.status_code, response.json()
+
+    def search_issue_rest(self, path, jdl):
+        response = requests.get(self.HOST + path + jdl, auth=self.AUTH, headers=self.HEADERS)
+        return response.status_code, response.json()
+
 
 

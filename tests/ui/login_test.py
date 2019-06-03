@@ -4,6 +4,7 @@ import pytest
 from pages.login_page import LoginPage
 
 
+@pytest.mark.skip
 @allure.feature("Login")
 @allure.tag("ui")
 class TestLogin:

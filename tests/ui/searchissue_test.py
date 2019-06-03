@@ -8,6 +8,7 @@ import pytest
 from pages.login_page import LoginPage
 
 
+@pytest.mark.skip
 @allure.feature("Search issue")
 @allure.tag("ui")
 class TestSearchIssue:
