@@ -1,9 +1,11 @@
-requests
-pytest
-webdriver_manager
+requests==2.20.1
+pytest==4.4.0
+webdriver_manager==1.7
 pytest-variables
 pytest-selenium
+pytest-xdist==1.28.0
+pytest-rerunfailures==7.0
 selenium
 urllib3>=1.24.2
-allure-pytest
+allure-pytest==2.6.4
 xmltodict

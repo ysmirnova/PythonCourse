@@ -9,7 +9,6 @@ from pages.login_page import LoginPage
 @pytest.mark.skip
 @allure.feature("Update issue")
 @allure.tag("ui")
-@pytest.mark.skip
 class TestSearchIssue:
     driver = None
     dashboard_page = None

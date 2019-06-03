@@ -7,7 +7,6 @@ from pages.login_page import LoginPage
 @pytest.mark.skip
 @allure.feature("Login")
 @allure.tag("ui")
-@pytest.mark.skip
 class TestLogin:
     driver = None
     login_page = None

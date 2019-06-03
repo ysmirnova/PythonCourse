@@ -11,7 +11,6 @@ from pages.login_page import LoginPage
 @pytest.mark.skip
 @allure.feature("Create issue")
 @allure.tag("ui")
-@pytest.mark.skip
 class TestCreateIssue:
     driver = None
     dashboard_page = None
