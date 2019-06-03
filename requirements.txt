@@ -6,6 +6,6 @@ pytest-selenium
 pytest-xdist==1.28.0
 pytest-rerunfailures==7.0
 selenium
-urllib3>=1.24.2
+urllib3==1.25.3
 allure-pytest==2.6.4
 xmltodict
