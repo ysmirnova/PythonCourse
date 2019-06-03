@@ -41,4 +41,9 @@ class RestActions:
         response = requests.get(self.HOST + path, auth=self.AUTH, headers=self.HEADERS)
         return response.status_code, response.json()
 
+    def search_issue_rest(self, path, jdl):
+        response = requests.post(self.HOST + path + jdl, auth=self.AUTH, headers=self.HEADERS)
+        return response.status_code, response.json()
+
+
 
