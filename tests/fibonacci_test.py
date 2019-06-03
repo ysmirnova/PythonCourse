@@ -15,7 +15,3 @@ class TestFibbonacci:
     def test_fibo_oneHundred(self):
         assert Fibo.generatefibonacci(100) == 354224848179261915075
 
-    @pytest.mark.flaky(reruns=2)
-    def test_random_rerun(self):
-        import random
-        assert random.choice([1, 2]) == 2
